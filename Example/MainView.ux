@@ -1,0 +1,59 @@
+<App>
+	<JavaScript>
+		var Uploader = require("Uploader");
+		// FILEPATH is relative file path that return from Camera or CameraRoll
+		// while the return object from Camera and CameraRoll contains `path` you have to pass it as the first paramerter below
+		var URL = "" // Your backend endpint;
+		var POSTDATA = {}; // your attached form data params to your backend
+
+		// Example #1 is for Single file upload.
+		Uploader.send("FILEPATH",URL,POSTDATA).then(function(data){
+			return JSON.parse(data);
+		}).then(function(responseObject){
+			/*
+				Here is the backend reply ;)
+			*/
+		}).catch(function(){
+			/*
+				Here is catch for any exception during the call or paring the response to json.
+			*/
+		});
+
+
+
+		// Example #2 is for Multiple file upload.
+		Uploader.sendMultiple([{
+			FilePath:"FILEPAH1"
+		},{
+			FilePath:"FILEPAH2"
+		}],URL,POSTDATA).then(function(data){
+			return JSON.parse(data);
+		}).then(function(responseObject){
+			/*
+				Here is the backend reply ;)
+			*/
+		}).catch(function(){
+			/*
+				Here is catch for any exception during the call or paring the response to json.
+			*/
+		});
+
+		/*
+			Advance features: the progress for uploading the documents.
+			We introduced three events as the following
+		*/
+
+		Uploader.progressChanged = function(current,total) {
+			
+		};
+
+		Uploader.starting = function() {
+
+		};
+
+		Uploader.requestCompleted = function() {
+
+		};
+
+	</JavaScript>
+</App>

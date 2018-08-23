@@ -1,0 +1,16 @@
+{
+  "Copyright": "Copyright (c) Ahmed Diab",
+  "Description": "Support for Fuse Multipart form uplaod with Form Data",
+  "Publisher": "Ahmed Diab",
+  "Version": "1.0.0",
+  "Package": {
+    "ProjectUrl": "https://twitter.com/AhmedMDiab"
+  },
+  "Packages": [
+    "Fuse",
+    "FuseJS"
+  ],
+  "Includes": [
+    "Uploader.uno:Source"
+  ]
+}
